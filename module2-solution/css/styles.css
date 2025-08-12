@@ -1,11 +1,25 @@
-* {box-sizing: border-box;margin: 0;padding: 0;}
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-body {font-family: Arial, sans-serif;padding: 20px;}
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
 
-h1 {text-align: center;margin-bottom: 20px;}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 .container {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* space between boxes */
 }
 
 .section {
@@ -13,71 +27,54 @@ h1 {text-align: center;margin-bottom: 20px;}
   background-color: gray;
   padding: 40px 20px 20px;
   position: relative;
-  margin-bottom: 20px;
+  flex: 1;
+  min-width: 250px;
 }
 
-.section-title1 {
+.section-title {
   position: absolute;
   top: 0;
-  center: 0;
-  background-color:light red;
+  left: 50%;
+  transform: translateX(-50%);
   border: 1px solid black;
   padding: 5px 10px;
   font-weight: bold;
+  color: white;
 }
-.section-title2 {
-  position: absolute;
-  top: 0;
-  centert: 0;
-  background-color:dark red;
-  border: 1px solid black;
-  padding: 5px 10px;
-  font-weight: bold;
+
+.title1 {
+  background-color: lightcoral; /* light red */
 }
-.section-title3 {
-  position: absolute;
-  top: 0;
-  center: 0;
-  background-color:light yellow;
-  border: 1px solid black;
-  padding: 5px 10px;
-  font-weight: bold;
+
+.title2 {
+  background-color: darkred;
+}
+
+.title3 {
+  background-color: lightyellow;
+  color: black;
 }
 
 /* Desktop view (3 side-by-side) */
 @media (min-width: 992px) {
   .section {
-    width: 32%;
-    float: center;
-    margin-right: 1%;
-    margin-left: 1%;
+    flex: 0 0 32%;
   }
 }
 
 /* Tablet view (2 on top, 1 below) */
 @media (min-width: 768px) and (max-width: 991px) {
   .section {
-    float: left;
-  }
-}
-  .section:nth-child(1),
-  .section:nth-child(2) {
-    width: 48%;
-    margin-right: 2%;
-    margin-left:2%;
+    flex: 0 0 48%;
   }
   .section:nth-child(3) {
-    width: 100%;
-    margin-top: 20px;
-    margin-right:2px;
-    margin-left:2px;
+    flex: 0 0 100%;
+  }
 }
 
-/* Mobile view (stacked with space on sides) */
-@media (max-width: 767px)
-.section {
-    width: 100%;
-    margin-top: 20px;
-    margin-right:2px;
-    margin-left:2px;
+/* Mobile view (stacked) */
+@media (max-width: 767px) {
+  .section {
+    flex: 0 0 100%;
+  }
 }
