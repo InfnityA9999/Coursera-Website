@@ -74,6 +74,35 @@ h1 {
     width: 100%;
   }
 }
+/* Desktop view: 3 equal sections side-by-side */
+@media (min-width: 992px) {
+  .section {
+    float: left;
+    width: 32%;
+    margin-right: 2%; /* horizontal gap */
+  }
+  .section:nth-child(3) {
+    margin-right: 0; /* remove gap after last box */
+  }
+}
+
+/* Tablet view: 2 on top, 1 below */
+@media (min-width: 768px) and (max-width: 991px) {
+  .section {
+    float: left;
+  }
+  .section:nth-child(1),
+  .section:nth-child(2) {
+    width: 49%;
+    margin-right: 2%; /* horizontal gap between first two */
+  }
+  .section:nth-child(2) {
+    margin-right: 0; /* no gap after right column */
+  }
+  .section:nth-child(3) {
+    width: 100%;
+  }
+}
 
 /* Mobile view: stacked */
 @media (max-width: 767px) {
