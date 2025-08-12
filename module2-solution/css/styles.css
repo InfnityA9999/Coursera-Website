@@ -72,9 +72,13 @@ h1 {
   }
 }
 
-/* Mobile view (stacked) */
+/* Mobile view (stacked with space on sides) */
 @media (max-width: 767px) {
+  body {
+    padding: 10px; /* space from screen edges */
+  }
   .section {
     flex: 0 0 100%;
+    padding: 40px 15px 20px; /* keeps inside padding balanced */
   }
 }
